@@ -5,18 +5,32 @@ using UnityEngine;
 public class Assault : MonoBehaviour
 {
     [SerializeField] GameObject bullet;
-    // Start is called before the first frame update
+    Animator anim;
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
+    {
+        shot();
+        //loadanim();
+        
+    }
+    public void shot()
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
+            anim.SetBool("shot",true);
             Instantiate(bullet, transform.position,Quaternion.identity);
         }
+        if (Input.GetKeyUp(KeyCode.Z))
+        {
+            anim.SetBool("shot",false);
+            Instantiate(bullet, transform.position, Quaternion.identity);
+        }
+
     }
+    
+    
 }
