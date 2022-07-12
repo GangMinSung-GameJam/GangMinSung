@@ -21,12 +21,12 @@ public class Assault : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            anim.SetBool("shot",true);
+            
             Instantiate(bullet, transform.position,Quaternion.identity);
         }
         if (Input.GetKeyUp(KeyCode.Z))
         {
-            anim.SetBool("shot",false);
+       
             Instantiate(bullet, transform.position, Quaternion.identity);
         }
 

@@ -5,9 +5,16 @@ using UnityEngine;
 public class player : MonoBehaviour
 {
     public int selectedBullet;
+    float angle;
+    Vector2 target, mouse;
 
+    private void Start()
+    {
+        target = transform.position;
+    }
     void Update()
     {
+        fire();
         SelectBullet();
         SwitchingBullet();
     }
@@ -31,5 +38,12 @@ public class player : MonoBehaviour
                 selectedBullet++;
         }
     }
-    
+    public void fire()
+    {
+        mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        angle = Mathf.Atan2(mouse.y - target.y, mouse.x - target.x) * Mathf.Rad2Deg;
+        this.transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+
+
+    }
 }
