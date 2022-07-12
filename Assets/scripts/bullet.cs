@@ -3,13 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MachineGun : MonoBehaviour
+public class bullet : MonoBehaviour
 {
-    [SerializeField] GameObject bullet;
-    [SerializeField] GameObject firePos;
-    [SerializeField] GameObject particlePos;
-    [SerializeField] GameObject particle;
-
     public int maxbullet;
     public int curbullet;
 
@@ -26,33 +21,20 @@ public class MachineGun : MonoBehaviour
         curbullet = maxbullet;
         reloadTimeView.maxValue = reloadTime;
     }
+
     void Update()
-    {
-
-        shot();
-    }
-    public void shot()
-
     {
         bulletTxt.text = curbullet + "/" + maxbullet;
         reloadTimeView.gameObject.SetActive(false);
-
-        if (Input.GetKey(KeyCode.Z) && canFire)
+        if (Input.GetKeyDown(KeyCode.Z) && canFire)
         {
             curbullet--;
-
-            Vector3 mousePos = Input.mousePosition;
-            mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-            mousePos.z = 0;
-            Instantiate(bullet, firePos.transform.position, Quaternion.identity);
-            Instantiate(particle, particlePos.transform.position, Quaternion.identity);
-            bullet.transform.position = transform.position;
-
         }
         if (curbullet <= 0)
         {
             Reloading();
         }
+
     }
     void Reloading()
     {
@@ -70,5 +52,4 @@ public class MachineGun : MonoBehaviour
 
         }
     }
-
 }

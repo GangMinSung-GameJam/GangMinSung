@@ -35,7 +35,7 @@ public class player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (selectedBullet >= transform.childCount  - 1)
+            if (selectedBullet >= 2)
                 selectedBullet = 0;
             else
                 selectedBullet++;
