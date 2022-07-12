@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
+    public float HP = 200;
     public int selectedBullet;
     float angle;
     Vector2 target, mouse;
@@ -25,7 +26,7 @@ public class player : MonoBehaviour
         foreach (Transform weapon in transform)
         {
             if (i == selectedBullet) { weapon.gameObject.SetActive(true); }
-            //else if(i == 3) { weapon.gameObject.SetActive(true); }
+            else if(i == 3) { weapon.gameObject.SetActive(true); }
             else { weapon.gameObject.SetActive(false); }
             i++;
         }

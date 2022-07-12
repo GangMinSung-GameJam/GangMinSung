@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    
     [SerializeField] float speed;
     [SerializeField] Vector3 dir;
+    Enemy enemy;
     private void Start()
     {
         dir = GameObject.Find("Player").GetComponent<Transform>().up;
@@ -17,4 +19,5 @@ public class Movement : MonoBehaviour
         
         Destroy(gameObject, 3);
     }
+    
 }

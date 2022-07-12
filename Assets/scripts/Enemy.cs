@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public float enemyHp = 20;
     public float damage = 10;
-    // Start is called before the first frame update
+    Vector3 dir;
     void Start()
     {
+        dir = GameObject.Find("Player").GetComponent<Transform>().up;
+        transform.rotation = GameObject.Find("Player").GetComponent<Transform>().rotation;
     }
     // ½ºÇÇµå
     public float speed;
-
+    LaserBullet laser;
     // Å¸°Ù
     public GameObject target = null;
 
@@ -24,6 +27,10 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if(enemyHp <= 0)
+        {
+            Destroy(gameObject);
+        }
 
         Vector2 degree = GameObject.Find("Player").GetComponent<Transform>().position - transform.position;
 
@@ -36,17 +43,6 @@ public class Enemy : MonoBehaviour
             rigid.velocity = Vector2.zero;
             degree = Vector2.zero;
         }
-
-        if (degree.x < 0)
-        {
-            transform.localScale = new Vector2(-1, 1);
-        }
-        else if (degree.x > 0)
-        {
-            transform.localScale = new Vector2(1, 1);
-        }
-
-        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -55,5 +51,12 @@ public class Enemy : MonoBehaviour
             GameObject.Find("Player").GetComponent<player>().HP -= damage;
             Destroy(gameObject);
         }
+        
+            if (collision.CompareTag("laser"))
+            {
+            Destroy(gameObject);
+            }
+        
+
     }
 }

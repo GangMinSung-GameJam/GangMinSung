@@ -8,12 +8,16 @@ public class MachineGun : MonoBehaviour
     [SerializeField] GameObject firePos;
     [SerializeField] GameObject particlePos;
     [SerializeField] GameObject particle;
+    [SerializeField] public float maxshotdelay;
+    [SerializeField] public float curshotdelay;
 
     void Update()
     {
         shot();
+        Reload();
     }
     public void shot()
+
     {
 
         if (Input.GetKey(KeyCode.Z))
@@ -24,7 +28,14 @@ public class MachineGun : MonoBehaviour
             Instantiate(bullet, firePos.transform.position, Quaternion.identity);
             Instantiate(particle, particlePos.transform.position, Quaternion.identity);
             bullet.transform.position = transform.position;
+            if (curshotdelay < maxshotdelay)
+                return;
+            
         }
 
+    }
+    void Reload()
+    {
+        curshotdelay += 1;
     }
 }
