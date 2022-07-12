@@ -16,23 +16,25 @@ public class player : MonoBehaviour
     {
         fire();
         SelectBullet();
-        SwitchingBullet();
+        swap();
     }
+
     public void SelectBullet()
     {
         int i = 0;
         foreach (Transform weapon in transform)
         {
             if (i == selectedBullet) { weapon.gameObject.SetActive(true); }
+            //else if(i == 3) { weapon.gameObject.SetActive(true); }
             else { weapon.gameObject.SetActive(false); }
             i++;
         }
     }
-    void SwitchingBullet()
+    void swap()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (selectedBullet >= transform.childCount - 1)
+            if (selectedBullet >= transform.childCount  - 1)
                 selectedBullet = 0;
             else
                 selectedBullet++;

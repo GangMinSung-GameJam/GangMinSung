@@ -2,38 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Assault : MonoBehaviour
+public class MachineGun : MonoBehaviour
 {
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject firePos;
-    Animator anim;
-    void Start()
-    {
-        anim = GetComponent<Animator>();
-    }
+    [SerializeField] GameObject particlePos;
+    [SerializeField] GameObject particle;
 
     void Update()
     {
         shot();
-
     }
     public void shot()
     {
 
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKey(KeyCode.Z))
         {
             Vector3 mousePos = Input.mousePosition;
             mousePos = Camera.main.ScreenToWorldPoint(mousePos);
             mousePos.z = 0;
             Instantiate(bullet, firePos.transform.position, Quaternion.identity);
+            Instantiate(particle, particlePos.transform.position, Quaternion.identity);
             bullet.transform.position = transform.position;
-        }
-        if (Input.GetKeyUp(KeyCode.Z))
-        {
-
         }
 
     }
-
-
 }

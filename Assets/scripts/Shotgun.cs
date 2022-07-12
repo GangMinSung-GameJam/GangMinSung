@@ -5,12 +5,13 @@ using UnityEngine;
 public class Shotgun : MonoBehaviour
 {
     [SerializeField] GameObject bullet;
+    [SerializeField] GameObject firepos;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            Instantiate(bullet, transform.position + Vector3.right * 3f + Vector3.down * 1f, Quaternion.identity);
+            Instantiate(bullet, firepos.transform.position, Quaternion.identity);
 
         }
     }

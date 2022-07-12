@@ -6,14 +6,15 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] Vector3 dir;
-    // Start is called before the first frame update
+    private void Start()
+    {
+        dir = GameObject.Find("Player").GetComponent<Transform>().up;
+        transform.rotation = GameObject.Find("Player").GetComponent<Transform>().rotation;
+    }
     void Update()
     {
         transform.position += dir * speed * Time.deltaTime;
+        
         Destroy(gameObject, 3);
-    }
-    public void MoveTo(Vector3 position)
-    {
-        position = dir;
     }
 }
