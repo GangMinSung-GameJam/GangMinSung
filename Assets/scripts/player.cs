@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
+    public float HP = 200;
+
     public int selectedBullet;
     float angle;
     Vector2 target, mouse;
@@ -16,7 +18,7 @@ public class player : MonoBehaviour
     {
         fire();
         SelectBullet();
-        SwitchingBullet();
+        swap();
     }
     public void SelectBullet()
     {
@@ -24,15 +26,16 @@ public class player : MonoBehaviour
         foreach (Transform weapon in transform)
         {
             if (i == selectedBullet) { weapon.gameObject.SetActive(true); }
+            else if(i == 3) { weapon.gameObject.SetActive(true); }
             else { weapon.gameObject.SetActive(false); }
             i++;
         }
     }
-    void SwitchingBullet()
+    void swap()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (selectedBullet >= transform.childCount - 1)
+            if (selectedBullet >= 2)
                 selectedBullet = 0;
             else
                 selectedBullet++;
