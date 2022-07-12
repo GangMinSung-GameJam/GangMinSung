@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
-    public float HP = 200;
+    public float maxHp = 200;
+    public float currenthp= 200;
     public int selectedBullet;
     float angle;
     Vector2 target, mouse;
 
     private void Start()
     {
+        maxHp = currenthp;
         target = transform.position;
     }
     void Update()
@@ -18,6 +21,10 @@ public class player : MonoBehaviour
         fire();
         SelectBullet();
         swap();
+        if(currenthp <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 
     public void SelectBullet()

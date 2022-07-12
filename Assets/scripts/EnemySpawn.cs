@@ -23,7 +23,7 @@ public class EnemySpawn : MonoBehaviour
     }
     void Start()
     {
-        InvokeRepeating("SpawnEnemy", 3, 2); //3초후 부터, SpawnEnemy함수를 1초마다 반복해서 실행 시킵니다.
+        InvokeRepeating("SpawnEnemy", 3, 0.3f); //3초후 부터, SpawnEnemy함수를 1초마다 반복해서 실행 시킵니다.
         
     }
     void Update()

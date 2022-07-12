@@ -3308,6 +3308,7 @@ GameObject:
   - component: {fileID: 1471570740}
   - component: {fileID: 1471570744}
   - component: {fileID: 1471570743}
+  - component: {fileID: 1471570745}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3327,7 +3328,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f35e4904a3ef9e4fb92d8efcf4c68eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 200
+  maxHp: 200
+  currenthp: 200
   selectedBullet: 0
 --- !u!212 &1471570741
 SpriteRenderer:
@@ -3434,6 +3436,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1471570745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471570739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f751b682a5af240439ebfa3d5f672627, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpbar: {fileID: 517583730}
 --- !u!1 &1563019372
 GameObject:
   m_ObjectHideFlags: 0
