@@ -18,6 +18,8 @@ TagManager:
   - Spawner
   - GunFlash
   - laser
+  - FxTemporaire
+  - metal
   layers:
   - Default
   - TransparentFX

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class EnemySpawn : MonoBehaviour
@@ -16,49 +17,56 @@ public class EnemySpawn : MonoBehaviour
             time2,
             time3;
     int waveTime = 0;
-    [SerializeField] GameObject wave1Penal;
-    [SerializeField] GameObject wave1Pena2;
-    [SerializeField] GameObject wave1Pena3;
-    [SerializeField] GameObject wave1Pena4;
-    [SerializeField] GameObject wave1Pena5;
-    [SerializeField] GameObject wave1Pena6;
-    [SerializeField] GameObject wave1Pena7;
-    [SerializeField] GameObject wave1Pena8;
-    [SerializeField] GameObject wave1Pena9;
-    [SerializeField] GameObject wave1Pena10;
+    [SerializeField] GameObject wave1;
+    [SerializeField] GameObject wave2;
+    [SerializeField] GameObject wave3;
+    [SerializeField] GameObject wave4;
+    [SerializeField] GameObject wave5;
+    [SerializeField] GameObject wave6;
+    [SerializeField] GameObject wave7;
+    [SerializeField] GameObject wave8;
+    [SerializeField] GameObject wave9;
+    [SerializeField] GameObject wave10;
+
     public GameObject[] enemies;
     public GameObject[] enemies1;
     public GameObject[] enemies2;
     public GameObject[] enemies3;
+    public float waveNext;
+    public float endWaveTime;
 
     bool iscase1;
 
-
-    float curTime = 0;
     private void Start()
     {
-        /*        switch (waveTime)
-                {
-                    case 0:
-
-                        Debug.Log("a");
-                        StartCoroutine(SpawnAnEnemy());
-                        iscase1 = false;
-                        break;
-                    default: return;
-                }*/
-
+        wave1.SetActive(false);
+        wave2.SetActive(false);
+        wave3.SetActive(false);
+        wave4.SetActive(false);
+        wave5.SetActive(false);
+        wave6.SetActive(false);
+        wave7.SetActive(false);
+        wave8.SetActive(false);
+        wave9.SetActive(false);
+        wave10.SetActive(false);
     }
+
+    float curTime = 0;
     public void Update()
     {
-        if (curTime >= 55)
+
+        GameObject.Find("WaveTime").GetComponent<Text>().text = "Time : " + (waveNext - (int)curTime);
+        if (curTime >= waveNext)
         {
             StopAllCoroutines();
             iscase1 = false;
             curTime = 0;
             waveTime++;
         }
-
+        if(waveTime == 9)
+        {
+            waveNext = endWaveTime;
+        }
 
         curTime += Time.deltaTime;
 
@@ -67,79 +75,78 @@ public class EnemySpawn : MonoBehaviour
             switch (waveTime)
             {
                 case 0:
-                    wave1Penal.SetActive(true);
+                    wave1.SetActive(true);
                     StartCoroutine(SpawnAnEnemy());
                     iscase1 = true;
                     break;
+
                 case 1:
-                    wave1Pena2.SetActive(true);
+                    wave2.SetActive(true);
                     StartCoroutine(SpawnAnEnemy());
                     iscase1 = true;
                     break;
+
                 case 2:
-                    wave1Pena3.SetActive(true);
+                    wave3.SetActive(true);
                     StartCoroutine(SpawnAnEnemy1());
                     iscase1 = true;
                     break;
+
                 case 3:
-                    wave1Pena4.SetActive(true);
+                    wave4.SetActive(true);
                     StartCoroutine(SpawnAnEnemy1());
                     iscase1 = true;
                     break;
+
                 case 4:
-                    wave1Pena5.SetActive(true);
+                    wave5.SetActive(true);
                     StartCoroutine(SpawnAnEnemy1());
                     iscase1 = true;
                     break;
+
                 case 5:
-                    wave1Pena6.SetActive(true);
+                    wave6.SetActive(true);
                     StartCoroutine(SpawnAnEnemy2());
                     iscase1 = true;
                     break;
+
                 case 6:
-                    wave1Pena7.SetActive(true);
+                    wave7.SetActive(true);
                     StartCoroutine(SpawnAnEnemy2());
                     iscase1 = true;
                     break;
+
                 case 7:
-                    wave1Pena8.SetActive(true);
+                    wave8.SetActive(true);
                     StartCoroutine(SpawnAnEnemy2());
                     iscase1 = true;
                     break;
+
                 case 8:
-                    wave1Pena9.SetActive(true);
+                    wave9.SetActive(true);
                     StartCoroutine(SpawnAnEnemy3());
                     iscase1 = true;
                     break;
+
                 case 9:
-                    wave1Pena10.SetActive(true);
+                    wave10.SetActive(true);
                     StartCoroutine(SpawnAnEnemy3());
                     iscase1 = true;
                     break;
-                default: return;
+
+                default:
+                    SceneManager.LoadScene("Clear");
+                    break;
             }
         }
     }
-
-    /*    public void Spawnenemy(int enemy)
-        {
-            while (enemy <= 0)
-            {
-                Vector2 spawnPos = GameObject.Find("Player").transform.position;
-                spawnPos += Random.insideUnitCircle.normalized * spawnRadius;
-
-                Instantiate(enemies[Random.Range(0, enemies.Length)], spawnPos, Quaternion.identity);
-                enemy--;
-                 return;
-            }
-        }*/
     IEnumerator SpawnAnEnemy()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3.3f);
         while (true)
         {
-            wave1Penal.SetActive(false);
-            wave1Pena2.SetActive(false);
+            wave1.SetActive(false);
+            wave2.SetActive(false);
             Vector2 spawnPos = GameObject.Find("Player").transform.position;
             spawnPos += Random.insideUnitCircle.normalized * spawnRadius;
 
@@ -149,14 +156,15 @@ public class EnemySpawn : MonoBehaviour
 
         }
     }
+
     IEnumerator SpawnAnEnemy1()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3.3f);
         while (true)
         {
-            wave1Pena3.SetActive(false);
-            wave1Pena4.SetActive(false);
-            wave1Pena5.SetActive(false);
+            wave3.SetActive(false);
+            wave4.SetActive(false);
+            wave5.SetActive(false);
             Vector2 spawnPos1 = GameObject.Find("Player").transform.position;
             spawnPos1 += Random.insideUnitCircle.normalized * spawnRadius;
 
@@ -166,14 +174,16 @@ public class EnemySpawn : MonoBehaviour
 
         }
     }
+    //-------------------------------
     IEnumerator SpawnAnEnemy2()
     {
-        wave1Pena6.SetActive(false);
-        wave1Pena7.SetActive(false);
-        wave1Pena8.SetActive(false);
-        yield return new WaitForSeconds(5);
+
+        yield return new WaitForSeconds(3.3f);
         while (true)
         {
+            wave6.SetActive(false);
+            wave7.SetActive(false);
+            wave8.SetActive(false);
             Vector2 spawnPos2 = GameObject.Find("Player").transform.position;
             spawnPos2 += Random.insideUnitCircle.normalized * spawnRadius;
 
@@ -185,12 +195,12 @@ public class EnemySpawn : MonoBehaviour
     }
     IEnumerator SpawnAnEnemy3()
     {
-        wave1Pena9.SetActive(false);
-        wave1Pena10.SetActive(false);
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3.3f);
         while (true)
         {
+            wave9.SetActive(false);
+            wave10.SetActive(false);
             Vector2 spawnPos3 = GameObject.Find("Player").transform.position;
             spawnPos3 += Random.insideUnitCircle.normalized * spawnRadius;
 

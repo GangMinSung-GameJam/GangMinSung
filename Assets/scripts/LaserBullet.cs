@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class LaserBullet : MonoBehaviour
 {
-    Enemy enemy;
     public float damage = 20;
     Vector3 dir;
     public float destroytime;
@@ -17,11 +16,15 @@ public class LaserBullet : MonoBehaviour
     {
         Destroy(gameObject,destroytime);
     }
-    /*private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
         {
-            enemy.enemyHp -= damage;
+            Destroy(collision.gameObject);
         }
-    }*/
+        if (collision.CompareTag("metal"))
+        {
+
+        }
+    }
 }

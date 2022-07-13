@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -4909084988817003616}
   - component: {fileID: 6817825570270604769}
   m_Layer: 0
-  m_Name: Enemy 1
+  m_Name: zonbee
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,10 +97,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 574dcae64db1e1948b8bf5e571bc850b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  take: 0
   enemyHp: 50
   damage: 10
+  particle: {fileID: 100000, guid: bc98890f6028f444eaa7789bde5e2eeb, type: 3}
   speed: 3
-  target: {fileID: 0}
   rigid: {fileID: -4909084988817003616}
   range: 20
 --- !u!50 &-4909084988817003616

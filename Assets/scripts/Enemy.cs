@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public float enemyHp = 20;
     public float damage = 10;
+    [SerializeField] GameObject particle;
     Vector3 dir;
     void Start()
     {
@@ -14,9 +15,7 @@ public class Enemy : MonoBehaviour
     }
     // ½ºÇÇµå
     public float speed;
-    LaserBullet laser;
     // Å¸°Ù
-    public GameObject target = null;
 
     // ¸®Áþ ¹Ùµð Ä³½Ì
     public Rigidbody2D rigid = null;
@@ -27,9 +26,10 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if(enemyHp <= 0)
+        if (enemyHp <= 0)
         {
             Destroy(gameObject);
+            GameObject par = Instantiate(particle, transform.position, Quaternion.identity);
         }
 
         Vector2 degree = GameObject.Find("Player").GetComponent<Transform>().position - transform.position;
@@ -50,13 +50,13 @@ public class Enemy : MonoBehaviour
         {
             GameObject.Find("Player").GetComponent<player>().currenthp -= damage;
             Destroy(gameObject);
+            //GameObject par = Instantiate(particle, transform.position, Quaternion.identity);
         }
-        
-            if (collision.CompareTag("laser"))
-            {
-            Destroy(gameObject);
-            }
-        
 
+        if (collision.CompareTag("laser"))
+        {
+            Destroy(gameObject);
+            GameObject par = Instantiate(particle, transform.position, Quaternion.identity);
+        }
     }
 }

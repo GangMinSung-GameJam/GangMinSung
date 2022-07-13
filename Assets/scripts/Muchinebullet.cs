@@ -5,7 +5,7 @@ using UnityEngine;
 public class Muchinebullet : MonoBehaviour
 {
 
-    [SerializeField] float damage = 5;
+    public float damage = 5;
     // Start is called before the first frame update
     void Start()
     {
