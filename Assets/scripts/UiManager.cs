@@ -79,5 +79,9 @@ public class UiManager : MonoBehaviour
         }
         
     }
-    
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
 }

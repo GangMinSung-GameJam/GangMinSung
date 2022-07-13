@@ -32,13 +32,18 @@ public class EnemySpawn : MonoBehaviour
     public GameObject[] enemies1;
     public GameObject[] enemies2;
     public GameObject[] enemies3;
+
     public float waveNext;
     public float endWaveTime;
+    public float Wave12Time;
+    float wave;
 
     bool iscase1;
 
     private void Start()
     {
+        wave = waveNext;
+
         wave1.SetActive(false);
         wave2.SetActive(false);
         wave3.SetActive(false);
@@ -58,12 +63,24 @@ public class EnemySpawn : MonoBehaviour
         GameObject.Find("WaveTime").GetComponent<Text>().text = "Time : " + (waveNext - (int)curTime);
         if (curTime >= waveNext)
         {
+
             StopAllCoroutines();
+
+
             iscase1 = false;
             curTime = 0;
             waveTime++;
         }
-        if(waveTime == 9)
+
+        if (waveTime == 0)
+        {
+            waveNext = Wave12Time;
+        }
+        if (waveTime == 1)
+        {
+            waveNext = Wave12Time;
+        }
+        if (waveTime == 9)
         {
             waveNext = endWaveTime;
         }
@@ -87,6 +104,7 @@ public class EnemySpawn : MonoBehaviour
                     break;
 
                 case 2:
+                    waveNext = wave;
                     wave3.SetActive(true);
                     StartCoroutine(SpawnAnEnemy1());
                     iscase1 = true;
@@ -153,7 +171,6 @@ public class EnemySpawn : MonoBehaviour
             Instantiate(enemies[Random.Range(0, enemies.Length)], spawnPos, Quaternion.identity);
 
             yield return new WaitForSecondsRealtime(time);
-
         }
     }
 
