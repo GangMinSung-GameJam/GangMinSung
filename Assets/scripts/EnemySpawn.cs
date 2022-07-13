@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class EnemySpawn : MonoBehaviour
 {
 
-
+    public bool stop;
 
 
     [SerializeField]
@@ -93,62 +93,104 @@ public class EnemySpawn : MonoBehaviour
             {
                 case 0:
                     wave1.SetActive(true);
-                    StartCoroutine(SpawnAnEnemy());
+                    if (stop == false)
+                    {
+                        StartCoroutine(SpawnAnEnemy());
+
+                    }
+                    
                     iscase1 = true;
                     break;
 
                 case 1:
                     wave2.SetActive(true);
+                    if (stop == false)
+                    {
+
                     StartCoroutine(SpawnAnEnemy());
+                    }
                     iscase1 = true;
                     break;
 
                 case 2:
                     waveNext = wave;
+
                     wave3.SetActive(true);
+                    if (stop == false)
+                    {
+
                     StartCoroutine(SpawnAnEnemy1());
+                    }
                     iscase1 = true;
                     break;
 
                 case 3:
                     wave4.SetActive(true);
+                    if (stop == false)
+                    {
+
                     StartCoroutine(SpawnAnEnemy1());
+                    }
                     iscase1 = true;
                     break;
 
                 case 4:
                     wave5.SetActive(true);
+                    if (stop == false)
+                    {
+
                     StartCoroutine(SpawnAnEnemy1());
+                    }
                     iscase1 = true;
                     break;
 
                 case 5:
                     wave6.SetActive(true);
+                    if (stop == false)
+                    {
+
                     StartCoroutine(SpawnAnEnemy2());
+                    }
                     iscase1 = true;
                     break;
 
                 case 6:
                     wave7.SetActive(true);
+                    if (stop == false)
+                    {
+
                     StartCoroutine(SpawnAnEnemy2());
+                    }
                     iscase1 = true;
                     break;
 
                 case 7:
                     wave8.SetActive(true);
+                    if (stop == false)
+                    {
+
                     StartCoroutine(SpawnAnEnemy2());
+                    }
                     iscase1 = true;
                     break;
 
                 case 8:
                     wave9.SetActive(true);
+                    if (stop == false)
+                    {
+
                     StartCoroutine(SpawnAnEnemy3());
+                    }
                     iscase1 = true;
                     break;
 
                 case 9:
                     wave10.SetActive(true);
+                    if (stop == false)
+                    {
+
                     StartCoroutine(SpawnAnEnemy3());
+                    }
                     iscase1 = true;
                     break;
 
