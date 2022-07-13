@@ -8,7 +8,7 @@ public class EnemySpawn : MonoBehaviour
 {
 
 
-
+    public bool stop;
 
     [SerializeField]
     private float spawnRadius = 7,
@@ -54,6 +54,12 @@ public class EnemySpawn : MonoBehaviour
     float curTime = 0;
     public void Update()
     {
+        if (stop == true)
+        {
+            Time.timeScale = 0;
+        }
+        else
+            Time.timeScale = 1;
 
         GameObject.Find("WaveTime").GetComponent<Text>().text = "Time : " + (waveNext - (int)curTime);
         if (curTime >= waveNext)
@@ -63,7 +69,7 @@ public class EnemySpawn : MonoBehaviour
             curTime = 0;
             waveTime++;
         }
-        if(waveTime == 9)
+        if (waveTime == 9)
         {
             waveNext = endWaveTime;
         }
@@ -142,6 +148,7 @@ public class EnemySpawn : MonoBehaviour
     }
     IEnumerator SpawnAnEnemy()
     {
+
         yield return new WaitForSeconds(3.3f);
         while (true)
         {
@@ -149,8 +156,8 @@ public class EnemySpawn : MonoBehaviour
             wave2.SetActive(false);
             Vector2 spawnPos = GameObject.Find("Player").transform.position;
             spawnPos += Random.insideUnitCircle.normalized * spawnRadius;
-
-            Instantiate(enemies[Random.Range(0, enemies.Length)], spawnPos, Quaternion.identity);
+            if (stop == false)
+                Instantiate(enemies[Random.Range(0, enemies.Length)], spawnPos, Quaternion.identity);
 
             yield return new WaitForSecondsRealtime(time);
 
@@ -168,7 +175,8 @@ public class EnemySpawn : MonoBehaviour
             Vector2 spawnPos1 = GameObject.Find("Player").transform.position;
             spawnPos1 += Random.insideUnitCircle.normalized * spawnRadius;
 
-            Instantiate(enemies1[Random.Range(0, enemies1.Length)], spawnPos1, Quaternion.identity);
+            if (stop == false)
+                Instantiate(enemies1[Random.Range(0, enemies1.Length)], spawnPos1, Quaternion.identity);
 
             yield return new WaitForSecondsRealtime(time1);
 
@@ -187,7 +195,8 @@ public class EnemySpawn : MonoBehaviour
             Vector2 spawnPos2 = GameObject.Find("Player").transform.position;
             spawnPos2 += Random.insideUnitCircle.normalized * spawnRadius;
 
-            Instantiate(enemies2[Random.Range(0, enemies2.Length)], spawnPos2, Quaternion.identity);
+            if (stop == false)
+                Instantiate(enemies2[Random.Range(0, enemies2.Length)], spawnPos2, Quaternion.identity);
 
             yield return new WaitForSecondsRealtime(time2);
 
@@ -204,7 +213,8 @@ public class EnemySpawn : MonoBehaviour
             Vector2 spawnPos3 = GameObject.Find("Player").transform.position;
             spawnPos3 += Random.insideUnitCircle.normalized * spawnRadius;
 
-            Instantiate(enemies3[Random.Range(0, enemies3.Length)], spawnPos3, Quaternion.identity);
+            if (stop == false)
+                Instantiate(enemies3[Random.Range(0, enemies3.Length)], spawnPos3, Quaternion.identity);
 
             yield return new WaitForSecondsRealtime(time3);
 

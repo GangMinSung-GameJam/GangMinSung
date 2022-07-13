@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Shotgun : MonoBehaviour
 {
+    public bool stop = false;
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject firepos;
 
@@ -29,7 +30,7 @@ public class Shotgun : MonoBehaviour
         else firerate = false;
         if (canFire == true)
         {
-            if (Input.GetKeyDown(KeyCode.Z) && firerate)
+            if (Input.GetKeyDown(KeyCode.Z) && firerate & stop == false)
             {
                 curbullet--;
                 curfireRate = 0;

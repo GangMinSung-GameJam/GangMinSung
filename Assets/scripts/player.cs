@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
+    public bool stop = false;
     public float maxHp = 200;
     public float currenthp = 200;
     public int selectedBullet;
@@ -40,7 +41,7 @@ public class player : MonoBehaviour
     }
     void swap()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && stop == false)
         {
             if (selectedBullet >= 2)
                 selectedBullet = 0;
