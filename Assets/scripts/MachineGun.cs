@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class MachineGun : MonoBehaviour
 {
+    public bool stop = false;
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject firePos;
     [SerializeField] GameObject particlePos;
@@ -39,7 +40,7 @@ public class MachineGun : MonoBehaviour
 
         if (canFire == true)
         {
-            if (Input.GetKey(KeyCode.Z) && firerate)
+            if (Input.GetKey(KeyCode.Z) && firerate && stop == false)
             {
                 curbullet--;
                 curfireRate = 0;

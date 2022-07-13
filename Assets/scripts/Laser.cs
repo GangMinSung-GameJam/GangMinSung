@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
-
+    public bool stop = false;
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject FirePos;
 
@@ -31,7 +31,7 @@ public class Laser : MonoBehaviour
 
         if(canFire == true)
         {
-            if (Input.GetKeyDown(KeyCode.Z) && firerate)
+            if (Input.GetKeyDown(KeyCode.Z) && firerate && stop == false)
             {
                 curbullet--;
                 curfireRate = 0;
@@ -41,8 +41,6 @@ public class Laser : MonoBehaviour
                 mousePos.z = 0;
                 Instantiate(bullet, FirePos.transform.position, Quaternion.identity);
                 bullet.transform.position = transform.position;
-
-
 
             }
         }
