@@ -51,7 +51,7 @@ public class EnemySpawn : MonoBehaviour
     }
     public void Update()
     {
-        if (curTime >= 45)
+        if (curTime >= 55)
         {
             StopAllCoroutines();
             iscase1 = false;
