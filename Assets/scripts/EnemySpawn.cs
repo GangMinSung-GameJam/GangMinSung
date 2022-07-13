@@ -1,33 +1,206 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemySpawn : MonoBehaviour
 {
-    public bool enableSpawn = false;
-    public GameObject Enemy;
-    public GameObject Enemy2;
-    public GameObject Enemy3;
-    public GameObject Enemy4;
-    void SpawnEnemy()
+
+
+
+
+    [SerializeField]
+    private float spawnRadius = 7,
+            time,
+            time1,
+            time2,
+            time3;
+    int waveTime = 0;
+    [SerializeField] GameObject wave1Penal;
+    [SerializeField] GameObject wave1Pena2;
+    [SerializeField] GameObject wave1Pena3;
+    [SerializeField] GameObject wave1Pena4;
+    [SerializeField] GameObject wave1Pena5;
+    [SerializeField] GameObject wave1Pena6;
+    [SerializeField] GameObject wave1Pena7;
+    [SerializeField] GameObject wave1Pena8;
+    [SerializeField] GameObject wave1Pena9;
+    [SerializeField] GameObject wave1Pena10;
+    public GameObject[] enemies;
+    public GameObject[] enemies1;
+    public GameObject[] enemies2;
+    public GameObject[] enemies3;
+
+    bool iscase1;
+
+
+    float curTime = 0;
+    private void Start()
     {
-        float randomX = Random.Range(-7.5f, 8.5f); //적이 나타날 X좌표를 랜덤으로 생성해 줍니다.
-        float randomY = Random.Range(-5f, 5f);
-        if (enableSpawn)
-        {
-            GameObject enemy = (GameObject)Instantiate(Enemy, new Vector3(randomX, 5f, 0f), Quaternion.identity);
-            GameObject enemy2 = (GameObject)Instantiate(Enemy2, new Vector3(randomX, -5f, 0f), Quaternion.identity);
-            GameObject enemy3 = (GameObject)Instantiate(Enemy3, new Vector3(-7.5f, randomY, 0f), Quaternion.identity);//랜덤한 위치와, 화면 제일 위에서 Enemy를 하나 생성해줍니다.
-            GameObject enemy4 = (GameObject)Instantiate(Enemy4, new Vector3(8.8f, randomY, 0f), Quaternion.identity);//랜덤한 위치와, 화면 제일 위에서 Enemy를 하나 생성해줍니다.
-        }
-    }
-    void Start()
-    {
-        InvokeRepeating("SpawnEnemy", 3, 0.3f); //3초후 부터, SpawnEnemy함수를 1초마다 반복해서 실행 시킵니다.
-        
-    }
-    void Update()
-    {
+        /*        switch (waveTime)
+                {
+                    case 0:
+
+                        Debug.Log("a");
+                        StartCoroutine(SpawnAnEnemy());
+                        iscase1 = false;
+                        break;
+                    default: return;
+                }*/
 
     }
+    public void Update()
+    {
+        if (curTime >= 45)
+        {
+            StopAllCoroutines();
+            iscase1 = false;
+            curTime = 0;
+            waveTime++;
+        }
+
+
+        curTime += Time.deltaTime;
+
+        if (!iscase1)
+        {
+            switch (waveTime)
+            {
+                case 0:
+                    wave1Penal.SetActive(true);
+                    StartCoroutine(SpawnAnEnemy());
+                    iscase1 = true;
+                    break;
+                case 1:
+                    wave1Pena2.SetActive(true);
+                    StartCoroutine(SpawnAnEnemy());
+                    iscase1 = true;
+                    break;
+                case 2:
+                    wave1Pena3.SetActive(true);
+                    StartCoroutine(SpawnAnEnemy1());
+                    iscase1 = true;
+                    break;
+                case 3:
+                    wave1Pena4.SetActive(true);
+                    StartCoroutine(SpawnAnEnemy1());
+                    iscase1 = true;
+                    break;
+                case 4:
+                    wave1Pena5.SetActive(true);
+                    StartCoroutine(SpawnAnEnemy1());
+                    iscase1 = true;
+                    break;
+                case 5:
+                    wave1Pena6.SetActive(true);
+                    StartCoroutine(SpawnAnEnemy2());
+                    iscase1 = true;
+                    break;
+                case 6:
+                    wave1Pena7.SetActive(true);
+                    StartCoroutine(SpawnAnEnemy2());
+                    iscase1 = true;
+                    break;
+                case 7:
+                    wave1Pena8.SetActive(true);
+                    StartCoroutine(SpawnAnEnemy2());
+                    iscase1 = true;
+                    break;
+                case 8:
+                    wave1Pena9.SetActive(true);
+                    StartCoroutine(SpawnAnEnemy3());
+                    iscase1 = true;
+                    break;
+                case 9:
+                    wave1Pena10.SetActive(true);
+                    StartCoroutine(SpawnAnEnemy3());
+                    iscase1 = true;
+                    break;
+                default: return;
+            }
+        }
+    }
+
+    /*    public void Spawnenemy(int enemy)
+        {
+            while (enemy <= 0)
+            {
+                Vector2 spawnPos = GameObject.Find("Player").transform.position;
+                spawnPos += Random.insideUnitCircle.normalized * spawnRadius;
+
+                Instantiate(enemies[Random.Range(0, enemies.Length)], spawnPos, Quaternion.identity);
+                enemy--;
+                 return;
+            }
+        }*/
+    IEnumerator SpawnAnEnemy()
+    {
+        yield return new WaitForSeconds(5);
+        while (true)
+        {
+            wave1Penal.SetActive(false);
+            wave1Pena2.SetActive(false);
+            Vector2 spawnPos = GameObject.Find("Player").transform.position;
+            spawnPos += Random.insideUnitCircle.normalized * spawnRadius;
+
+            Instantiate(enemies[Random.Range(0, enemies.Length)], spawnPos, Quaternion.identity);
+
+            yield return new WaitForSecondsRealtime(time);
+
+        }
+    }
+    IEnumerator SpawnAnEnemy1()
+    {
+        yield return new WaitForSeconds(5);
+        while (true)
+        {
+            wave1Pena3.SetActive(false);
+            wave1Pena4.SetActive(false);
+            wave1Pena5.SetActive(false);
+            Vector2 spawnPos1 = GameObject.Find("Player").transform.position;
+            spawnPos1 += Random.insideUnitCircle.normalized * spawnRadius;
+
+            Instantiate(enemies1[Random.Range(0, enemies1.Length)], spawnPos1, Quaternion.identity);
+
+            yield return new WaitForSecondsRealtime(time1);
+
+        }
+    }
+    IEnumerator SpawnAnEnemy2()
+    {
+        wave1Pena6.SetActive(false);
+        wave1Pena7.SetActive(false);
+        wave1Pena8.SetActive(false);
+        yield return new WaitForSeconds(5);
+        while (true)
+        {
+            Vector2 spawnPos2 = GameObject.Find("Player").transform.position;
+            spawnPos2 += Random.insideUnitCircle.normalized * spawnRadius;
+
+            Instantiate(enemies2[Random.Range(0, enemies2.Length)], spawnPos2, Quaternion.identity);
+
+            yield return new WaitForSecondsRealtime(time2);
+
+        }
+    }
+    IEnumerator SpawnAnEnemy3()
+    {
+        wave1Pena9.SetActive(false);
+        wave1Pena10.SetActive(false);
+
+        yield return new WaitForSeconds(5);
+        while (true)
+        {
+            Vector2 spawnPos3 = GameObject.Find("Player").transform.position;
+            spawnPos3 += Random.insideUnitCircle.normalized * spawnRadius;
+
+            Instantiate(enemies3[Random.Range(0, enemies3.Length)], spawnPos3, Quaternion.identity);
+
+            yield return new WaitForSecondsRealtime(time3);
+
+        }
+    }
+
 }
+
+
