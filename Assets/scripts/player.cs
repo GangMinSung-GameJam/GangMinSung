@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 public class player : MonoBehaviour
 {
     public float maxHp = 200;
-    public float currenthp= 200;
+    public float currenthp = 200;
     public int selectedBullet;
     float angle;
     Vector2 target, mouse;
 
     private void Start()
     {
-        maxHp = currenthp;
+        currenthp = maxHp;
         target = transform.position;
     }
     void Update()
@@ -21,7 +21,7 @@ public class player : MonoBehaviour
         fire();
         SelectBullet();
         swap();
-        if(currenthp <= 0)
+        if (currenthp <= 0)
         {
             SceneManager.LoadScene("GameOver");
         }
@@ -33,7 +33,7 @@ public class player : MonoBehaviour
         foreach (Transform weapon in transform)
         {
             if (i == selectedBullet) { weapon.gameObject.SetActive(true); }
-            else if(i == 3) { weapon.gameObject.SetActive(true); }
+            else if (i == 3) { weapon.gameObject.SetActive(true); }
             else { weapon.gameObject.SetActive(false); }
             i++;
         }

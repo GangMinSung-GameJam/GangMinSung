@@ -13,10 +13,13 @@ public class MachineGun : MonoBehaviour
     public int maxbullet;
     public int curbullet;
     public int reloadTime;
+    public float fireRate;
 
+    float curfireRate;
 
 
     public bool canFire;
+    bool firerate;
     void Start()
     {
         canFire = true;
@@ -29,20 +32,28 @@ public class MachineGun : MonoBehaviour
     }
     public void shot()
     {
+        curfireRate += Time.deltaTime;
 
-        if (Input.GetKey(KeyCode.Z) && canFire)
+        if (curfireRate >= fireRate) firerate = true;
+        else firerate = false;
+
+        if (canFire == true)
         {
-            curbullet--;
+            if (Input.GetKey(KeyCode.Z) && firerate)
+            {
+                curbullet--;
+                curfireRate = 0;
 
-            Vector3 mousePos = Input.mousePosition;
-            mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-            mousePos.z = 0;
-            Instantiate(bullet, firePos.transform.position, Quaternion.identity);
-            Instantiate(particle, particlePos.transform.position, Quaternion.identity);
-            bullet.transform.position = transform.position;
+                Vector3 mousePos = Input.mousePosition;
+                mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+                mousePos.z = 0;
+                Instantiate(bullet, firePos.transform.position, Quaternion.identity);
+                Instantiate(particle, particlePos.transform.position, Quaternion.identity);
+                bullet.transform.position = transform.position;
 
+            }
         }
-        if(curbullet == 0)
+        if (curbullet == 0)
         {
             canFire = false;
         }
