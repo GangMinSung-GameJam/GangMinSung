@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            GameObject.Find("Player").GetComponent<player>().HP -= damage;
+            GameObject.Find("Player").GetComponent<player>().currenthp -= damage;
             Destroy(gameObject);
         }
         
