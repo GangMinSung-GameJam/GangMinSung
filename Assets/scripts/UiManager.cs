@@ -9,6 +9,10 @@ public class UiManager : MonoBehaviour
     float time;
     float fadeRate = 0;
     [SerializeField] GameObject penal;
+    [SerializeField] GameObject explain;
+    [SerializeField] GameObject Dogam;
+    [SerializeField] GameObject Weapon;
+    [SerializeField] GameObject Enemy;
     [SerializeField] Text wavePenal;
     
 
@@ -32,6 +36,34 @@ public class UiManager : MonoBehaviour
     public void Restart(string start)
     {
         SceneManager.LoadScene(start);
+    }
+    public void explainO()
+    {
+        explain.SetActive(true);
+    }
+    public void WeaponO()
+    {
+        Weapon.SetActive(true);
+        Dogam.SetActive(false);
+    }
+    public void Weaponclose()
+    {
+        Weapon.SetActive(false);
+        Dogam.SetActive(true);
+    }
+    public void explainclose()
+    {
+        explain.SetActive(false);
+    }
+    public void EnemyO()
+    {
+        Enemy.SetActive(true);
+        Dogam.SetActive(false);
+    }
+    public void Enemyclose()
+    {
+        Enemy.SetActive(false);
+        Dogam.SetActive(true);
     }
     void Fade()
     {
