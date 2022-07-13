@@ -2808,13 +2808,14 @@ GameObject:
   - component: {fileID: 248785947}
   - component: {fileID: 248785949}
   - component: {fileID: 248785948}
+  - component: {fileID: 248785950}
   m_Layer: 5
   m_Name: Wave7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &248785947
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2876,6 +2877,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248785946}
   m_CullTransparentMesh: 1
+--- !u!114 &248785950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248785946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884e146c7ef1ccf49bcaa0953ca366d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  penal: {fileID: 0}
+  wavePenal: {fileID: 248785948}
 --- !u!1 &299541981
 GameObject:
   m_ObjectHideFlags: 0
@@ -3054,13 +3069,14 @@ GameObject:
   - component: {fileID: 486691072}
   - component: {fileID: 486691074}
   - component: {fileID: 486691073}
+  - component: {fileID: 486691075}
   m_Layer: 5
   m_Name: Wave5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &486691072
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3122,6 +3138,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 486691071}
   m_CullTransparentMesh: 1
+--- !u!114 &486691075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486691071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884e146c7ef1ccf49bcaa0953ca366d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  penal: {fileID: 0}
+  wavePenal: {fileID: 486691073}
 --- !u!1 &488028616
 GameObject:
   m_ObjectHideFlags: 0
@@ -3133,13 +3163,14 @@ GameObject:
   - component: {fileID: 488028617}
   - component: {fileID: 488028619}
   - component: {fileID: 488028618}
+  - component: {fileID: 488028620}
   m_Layer: 5
   m_Name: Wave10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &488028617
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3201,6 +3232,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 488028616}
   m_CullTransparentMesh: 1
+--- !u!114 &488028620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488028616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884e146c7ef1ccf49bcaa0953ca366d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  penal: {fileID: 0}
+  wavePenal: {fileID: 488028618}
 --- !u!1 &491022747
 GameObject:
   m_ObjectHideFlags: 0
@@ -3770,13 +3815,14 @@ GameObject:
   - component: {fileID: 661254572}
   - component: {fileID: 661254574}
   - component: {fileID: 661254573}
+  - component: {fileID: 661254575}
   m_Layer: 5
   m_Name: Wave6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &661254572
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3838,6 +3884,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 661254571}
   m_CullTransparentMesh: 1
+--- !u!114 &661254575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661254571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884e146c7ef1ccf49bcaa0953ca366d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  penal: {fileID: 0}
+  wavePenal: {fileID: 661254573}
 --- !u!1 &664788422
 GameObject:
   m_ObjectHideFlags: 0
@@ -4232,13 +4292,14 @@ GameObject:
   - component: {fileID: 1001288795}
   - component: {fileID: 1001288797}
   - component: {fileID: 1001288796}
+  - component: {fileID: 1001288798}
   m_Layer: 5
   m_Name: Wave4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1001288795
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4300,6 +4361,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1001288794}
   m_CullTransparentMesh: 1
+--- !u!114 &1001288798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001288794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884e146c7ef1ccf49bcaa0953ca366d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  penal: {fileID: 0}
+  wavePenal: {fileID: 1001288796}
 --- !u!1 &1001831781
 GameObject:
   m_ObjectHideFlags: 0
@@ -4676,13 +4751,14 @@ GameObject:
   - component: {fileID: 1149774726}
   - component: {fileID: 1149774728}
   - component: {fileID: 1149774727}
+  - component: {fileID: 1149774729}
   m_Layer: 5
   m_Name: Wave2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1149774726
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4744,6 +4820,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1149774725}
   m_CullTransparentMesh: 1
+--- !u!114 &1149774729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149774725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884e146c7ef1ccf49bcaa0953ca366d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  penal: {fileID: 0}
+  wavePenal: {fileID: 1149774727}
 --- !u!1 &1158314807
 GameObject:
   m_ObjectHideFlags: 0
@@ -4785,13 +4875,14 @@ GameObject:
   - component: {fileID: 1167652297}
   - component: {fileID: 1167652299}
   - component: {fileID: 1167652298}
+  - component: {fileID: 1167652300}
   m_Layer: 5
   m_Name: Wave8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1167652297
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4853,6 +4944,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1167652296}
   m_CullTransparentMesh: 1
+--- !u!114 &1167652300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167652296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884e146c7ef1ccf49bcaa0953ca366d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  penal: {fileID: 0}
+  wavePenal: {fileID: 1167652298}
 --- !u!1 &1230279643
 GameObject:
   m_ObjectHideFlags: 0
@@ -5042,13 +5147,14 @@ GameObject:
   - component: {fileID: 1312154444}
   - component: {fileID: 1312154446}
   - component: {fileID: 1312154445}
+  - component: {fileID: 1312154447}
   m_Layer: 5
   m_Name: Wave3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1312154444
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5110,6 +5216,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1312154443}
   m_CullTransparentMesh: 1
+--- !u!114 &1312154447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312154443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884e146c7ef1ccf49bcaa0953ca366d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  penal: {fileID: 0}
+  wavePenal: {fileID: 1312154445}
 --- !u!1 &1313069112
 GameObject:
   m_ObjectHideFlags: 0
@@ -5234,13 +5354,14 @@ GameObject:
   - component: {fileID: 1359205259}
   - component: {fileID: 1359205261}
   - component: {fileID: 1359205260}
+  - component: {fileID: 1359205262}
   m_Layer: 5
   m_Name: Wave1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1359205259
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5302,6 +5423,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1359205258}
   m_CullTransparentMesh: 1
+--- !u!114 &1359205262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359205258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884e146c7ef1ccf49bcaa0953ca366d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  penal: {fileID: 0}
+  wavePenal: {fileID: 1359205260}
 --- !u!1 &1471570739
 GameObject:
   m_ObjectHideFlags: 0
@@ -5532,36 +5667,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1482533919}
   m_CullTransparentMesh: 1
---- !u!1 &1486718877
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1486718878}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1486718878
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1486718877}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.78, y: -4.54, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1563019372
 GameObject:
   m_ObjectHideFlags: 0
@@ -6080,9 +6185,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnRadius: 7
   time: 1
-  time1: 0.9
-  time2: 0.7
-  time3: 0.5
+  time1: 0.8
+  time2: 0.6
+  time3: 0.4
   wave1Penal: {fileID: 1359205258}
   wave1Pena2: {fileID: 1149774725}
   wave1Pena3: {fileID: 1312154443}
@@ -6132,13 +6237,14 @@ GameObject:
   - component: {fileID: 2114568046}
   - component: {fileID: 2114568048}
   - component: {fileID: 2114568047}
+  - component: {fileID: 2114568049}
   m_Layer: 5
   m_Name: Wave9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2114568046
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6200,6 +6306,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2114568045}
   m_CullTransparentMesh: 1
+--- !u!114 &2114568049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114568045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884e146c7ef1ccf49bcaa0953ca366d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  penal: {fileID: 0}
+  wavePenal: {fileID: 2114568047}
 --- !u!1 &2116879295
 GameObject:
   m_ObjectHideFlags: 0
