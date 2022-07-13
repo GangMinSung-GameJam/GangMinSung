@@ -2703,9 +2703,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 2515076580146444543, guid: ce8894c5ec1babc4e9a73817773b2367, type: 3}
   FirePos: {fileID: 1563019372}
-  maxbullet: 10
-  curbullet: 10
-  reloadTime: 4
+  maxbullet: 15
+  curbullet: 15
+  reloadTime: 5
   canFire: 0
   fireRate: 0
 --- !u!1 &179312434
@@ -2890,6 +2890,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   penal: {fileID: 0}
+  explain: {fileID: 0}
+  Dogam: {fileID: 0}
+  Weapon: {fileID: 0}
+  Enemy: {fileID: 0}
   wavePenal: {fileID: 248785948}
 --- !u!1 &299541981
 GameObject:
@@ -3151,6 +3155,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   penal: {fileID: 0}
+  explain: {fileID: 0}
+  Dogam: {fileID: 0}
+  Weapon: {fileID: 0}
+  Enemy: {fileID: 0}
   wavePenal: {fileID: 486691073}
 --- !u!1 &488028616
 GameObject:
@@ -3245,6 +3253,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   penal: {fileID: 0}
+  explain: {fileID: 0}
+  Dogam: {fileID: 0}
+  Weapon: {fileID: 0}
+  Enemy: {fileID: 0}
   wavePenal: {fileID: 488028618}
 --- !u!1 &491022747
 GameObject:
@@ -3897,6 +3909,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   penal: {fileID: 0}
+  explain: {fileID: 0}
+  Dogam: {fileID: 0}
+  Weapon: {fileID: 0}
+  Enemy: {fileID: 0}
   wavePenal: {fileID: 661254573}
 --- !u!1 &664788422
 GameObject:
@@ -4374,6 +4390,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   penal: {fileID: 0}
+  explain: {fileID: 0}
+  Dogam: {fileID: 0}
+  Weapon: {fileID: 0}
+  Enemy: {fileID: 0}
   wavePenal: {fileID: 1001288796}
 --- !u!1 &1001831781
 GameObject:
@@ -4833,6 +4853,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   penal: {fileID: 0}
+  explain: {fileID: 0}
+  Dogam: {fileID: 0}
+  Weapon: {fileID: 0}
+  Enemy: {fileID: 0}
   wavePenal: {fileID: 1149774727}
 --- !u!1 &1158314807
 GameObject:
@@ -4957,6 +4981,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   penal: {fileID: 0}
+  explain: {fileID: 0}
+  Dogam: {fileID: 0}
+  Weapon: {fileID: 0}
+  Enemy: {fileID: 0}
   wavePenal: {fileID: 1167652298}
 --- !u!1 &1230279643
 GameObject:
@@ -5056,9 +5084,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 6461755629780082621, guid: 158a4486a4f49874e92f3a1f3d57e918, type: 3}
   firepos: {fileID: 1158314807}
-  maxbullet: 20
-  curbullet: 20
-  reloadTime: 1
+  maxbullet: 10
+  curbullet: 10
+  reloadTime: 5
   fireRate: 0.3
   canFire: 0
 --- !u!1 &1263618710
@@ -5229,6 +5257,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   penal: {fileID: 0}
+  explain: {fileID: 0}
+  Dogam: {fileID: 0}
+  Weapon: {fileID: 0}
+  Enemy: {fileID: 0}
   wavePenal: {fileID: 1312154445}
 --- !u!1 &1313069112
 GameObject:
@@ -5437,6 +5469,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   penal: {fileID: 0}
+  explain: {fileID: 0}
+  Dogam: {fileID: 0}
+  Weapon: {fileID: 0}
+  Enemy: {fileID: 0}
   wavePenal: {fileID: 1359205260}
 --- !u!1 &1471570739
 GameObject:
@@ -6292,8 +6328,8 @@ MonoBehaviour:
   - {fileID: 696197103875572685, guid: 2c34b7a041295af4fa6bb27a86dc7cd2, type: 3}
   - {fileID: 696197103875572685, guid: 7dddd62b471456e4e85c3283cfa342da, type: 3}
   - {fileID: 696197103875572685, guid: ec2fc4511278ba8459eb17a76a6494ef, type: 3}
-  waveNext: 5
-  endWaveTime: 60
+  waveNext: 6
+  endWaveTime: 1
 --- !u!4 &1983682083
 Transform:
   m_ObjectHideFlags: 0
@@ -6401,6 +6437,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   penal: {fileID: 0}
+  explain: {fileID: 0}
+  Dogam: {fileID: 0}
+  Weapon: {fileID: 0}
+  Enemy: {fileID: 0}
   wavePenal: {fileID: 2114568047}
 --- !u!1 &2116879295
 GameObject:
