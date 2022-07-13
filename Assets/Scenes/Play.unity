@@ -6328,8 +6328,8 @@ MonoBehaviour:
   - {fileID: 696197103875572685, guid: 2c34b7a041295af4fa6bb27a86dc7cd2, type: 3}
   - {fileID: 696197103875572685, guid: 7dddd62b471456e4e85c3283cfa342da, type: 3}
   - {fileID: 696197103875572685, guid: ec2fc4511278ba8459eb17a76a6494ef, type: 3}
-  waveNext: 6
-  endWaveTime: 1
+  waveNext: 30
+  endWaveTime: 60
 --- !u!4 &1983682083
 Transform:
   m_ObjectHideFlags: 0
