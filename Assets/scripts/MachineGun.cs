@@ -12,19 +12,15 @@ public class MachineGun : MonoBehaviour
 
     public int maxbullet;
     public int curbullet;
+    public int reloadTime;
 
-    public float reloadTime;
 
-    float curTime;
 
-    [SerializeField] Slider reloadTimeView;
-    [SerializeField] Text bulletTxt;
-
-    bool canFire = true;
+    public bool canFire;
     void Start()
     {
+        canFire = true;
         curbullet = maxbullet;
-        reloadTimeView.maxValue = reloadTime;
     }
     void Update()
     {
@@ -32,10 +28,7 @@ public class MachineGun : MonoBehaviour
         shot();
     }
     public void shot()
-
     {
-        bulletTxt.text = curbullet + "/" + maxbullet;
-        reloadTimeView.gameObject.SetActive(false);
 
         if (Input.GetKey(KeyCode.Z) && canFire)
         {
@@ -49,26 +42,9 @@ public class MachineGun : MonoBehaviour
             bullet.transform.position = transform.position;
 
         }
-        if (curbullet <= 0)
+        if(curbullet == 0)
         {
-            Reloading();
+            canFire = false;
         }
     }
-    void Reloading()
-    {
-        canFire = false;
-        curTime += Time.deltaTime;
-
-        reloadTimeView.value = curTime;
-        reloadTimeView.gameObject.SetActive(true);
-
-        if (curTime >= reloadTime)
-        {
-            canFire = true;
-            curbullet = maxbullet;
-            curTime = 0;
-
-        }
-    }
-
 }
