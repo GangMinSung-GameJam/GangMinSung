@@ -12,6 +12,8 @@ public class MachineGun : MonoBehaviour
     [SerializeField] GameObject particle;
     AudioSource shootSound;
 
+    public float currentDamage;
+
     public int maxbullet;
     public int curbullet;
     public float reloadTime;
@@ -51,7 +53,10 @@ public class MachineGun : MonoBehaviour
                 Vector3 mousePos = Input.mousePosition;
                 mousePos = Camera.main.ScreenToWorldPoint(mousePos);
                 mousePos.z = 0;
-                Instantiate(bullet, firePos.transform.position, Quaternion.identity);
+
+                var bulletObj = Instantiate(bullet, firePos.transform.position, Quaternion.identity);
+                bulletObj.GetComponent<Muchinebullet>().damage = currentDamage;
+
                 Instantiate(particle, particlePos.transform.position, Quaternion.identity);
                 bullet.transform.position = transform.position;
 

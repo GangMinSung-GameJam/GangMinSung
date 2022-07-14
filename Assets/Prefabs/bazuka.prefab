@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particle: {fileID: 1892078723244562, guid: 46876a2780737ec45a19d62f88e5ce56, type: 3}
-  speed: 10
+  speed: 20
   time: 0
 --- !u!82 &4082604661602092976
 AudioSource:

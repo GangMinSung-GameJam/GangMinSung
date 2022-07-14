@@ -276,6 +276,7 @@ public class EnemySpawn : MonoBehaviour
 
         yield return new WaitForSeconds(3.3f);
         panel.SetActive(true);
+        panel2.SetActive(true);
 
         while (true)
         {

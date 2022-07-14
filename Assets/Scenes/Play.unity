@@ -2873,7 +2873,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "+5\uACF5\uACA9\uB825"
+  m_Text: "+10\uACF5\uACA9\uB825"
 --- !u!222 &107742308
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3172,7 +3172,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "-0.2\uCD08"
+  m_Text: "-0.3\uCD08"
 --- !u!222 &128876363
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3832,7 +3832,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "+5\uACF5\uACA9\uB825"
+  m_Text: "+10\uACF5\uACA9\uB825"
 --- !u!222 &429341707
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4838,7 +4838,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &618013656
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5411,8 +5411,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1d40ebfbcaa8fe4a9abdf881c93783f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadCoolTime: 0.5
-  PlusDamage: 5
+  loadCoolTime: 0.3
+  PlusDamage: 10
   PlusHp: 50
   panel: {fileID: 626498976}
   panel2: {fileID: 618013655}
@@ -9726,7 +9726,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "-0.2\uCD08"
+  m_Text: "-0.3\uCD08"
 --- !u!222 &1935752439
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10010,9 +10010,9 @@ MonoBehaviour:
   - {fileID: 696197103875572685, guid: 2c34b7a041295af4fa6bb27a86dc7cd2, type: 3}
   - {fileID: 696197103875572685, guid: 7dddd62b471456e4e85c3283cfa342da, type: 3}
   - {fileID: 696197103875572685, guid: ec2fc4511278ba8459eb17a76a6494ef, type: 3}
-  waveNext: 30
-  endWaveTime: 60
-  Wave12Time: 20
+  waveNext: 5
+  endWaveTime: 5
+  Wave12Time: 5
 --- !u!4 &1983682083
 Transform:
   m_ObjectHideFlags: 0

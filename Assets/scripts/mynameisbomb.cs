@@ -7,24 +7,34 @@ public class mynameisbomb : MonoBehaviour
     [SerializeField] GameObject particle;
     public float speed = 50;
     public float time;
+    Vector3 targetPosition;
     Vector3 dir;
     void Start()
     {
-        dir = GameObject.Find("Player").GetComponent<Transform>().up;
+        //dir = GameObject.Find("Player").GetComponent<Transform>().up;
+        targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        dir = targetPosition.normalized;
+
         transform.rotation = GameObject.Find("Player").GetComponent<Transform>().rotation;
     }
 
     void Update()
     {
-        speed = speed - time;
         time += Time.deltaTime;
         transform.position += dir * speed * Time.deltaTime;
 
-        if(speed <= 0)
+        if(Vector3.Distance(transform.position, targetPosition) < 1)
         {
             Destroy(gameObject);
-            GameObject par = Instantiate(particle,transform.position,Quaternion.identity);
-
+            GameObject par = Instantiate(particle, transform.position, Quaternion.identity);
         }
+
+
+        //if (speed <= 0)
+        //{
+        //    Destroy(gameObject);
+        //    GameObject par = Instantiate(particle,transform.position,Quaternion.identity);
+
+        //}
     }
 }

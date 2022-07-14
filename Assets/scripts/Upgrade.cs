@@ -18,7 +18,7 @@ public class Upgrade : MonoBehaviour
     [SerializeField] loadManager loadManager;
     private void Start()
     {
-        muchinegunDamage.damage = muchinegunDamage.Maxdamage;
+        machinegun.currentDamage = muchinegunDamage.Maxdamage;
     }
  
     public void loadTime()
@@ -45,7 +45,8 @@ public class Upgrade : MonoBehaviour
     public void damageUp()
     {
         GameObject.Find("EnemySpwaner").GetComponent<EnemySpawn>().stop = false;
-        muchinegunDamage.damage += PlusDamage;
+        //muchinegunDamage.damage += PlusDamage;
+        machinegun.currentDamage += PlusDamage;
 
         panel.SetActive(false);
         panel2.SetActive(false);

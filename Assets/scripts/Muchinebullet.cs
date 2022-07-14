@@ -5,13 +5,9 @@ using UnityEngine;
 public class Muchinebullet : MonoBehaviour
 {
 
-    public float Maxdamage = 5;
+    public float Maxdamage = 25;
     public float damage;
     // Start is called before the first frame update
-    void Start()
-    {
-        damage = Maxdamage;
-    }
 
     // Update is called once per frame
     void Update()
@@ -23,6 +19,7 @@ public class Muchinebullet : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<Enemy>().enemyHp -= damage;
+            Debug.Log(damage);
             Destroy(gameObject);
         }
     }
