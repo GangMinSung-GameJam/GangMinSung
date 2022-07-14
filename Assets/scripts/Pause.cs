@@ -7,7 +7,7 @@ public class Pause : MonoBehaviour
     public static bool GameIsPause = false;
 
     public GameObject pauseMenuUI;
-
+    public bool stop;
 
     void Update()
     {
@@ -25,6 +25,7 @@ public class Pause : MonoBehaviour
     }
     void Pausegame()
     {
+        //GameObject.Find("Player").SetActive(false);
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0;
         GameIsPause = true;

@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayUiManager : MonoBehaviour
 {
-    public GameObject Penal;
-    
-
+    public GameObject pauseMenuUI;
+    public bool GameIsPause;
+    [SerializeField] GameObject player;
     public void Start()
     {
     }
@@ -16,12 +16,33 @@ public class PlayUiManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            GameObject.Find("EnemySpwaner").GetComponent<EnemySpawn>().stop = true;
-            GameObject.Find("Player").GetComponent<player>().stop = true;
-                Time.timeScale = 0;
-                Penal.SetActive(true);
-           
+            //GameObject.Find("Player").GetComponent<player>().stop = true;
+            /*Time.timeScale = 0;
+            Penal.SetActive(true);*/
+            if (GameIsPause) { Resume(); }
+            else { Pausegame(); }
+
         }
+    }
+    void Resume()
+    {
+            GameObject.Find("EnemySpwaner").GetComponent<EnemySpawn>().stop = false;
+        //GameObject.Find("dady").GetComponent<dady>().selectedBullet++;
+        //player.SetActive(true);
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        GameIsPause = false;
+    }
+    void Pausegame()
+    {
+        GameObject.Find("EnemySpwaner").GetComponent<EnemySpawn>().stop = true;
+
+        //GameObject.Find("dady").GetComponent<dady>().selectedBullet++;
+        //player.SetActive(false);
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0;
+        GameIsPause = true;
+
     }
     public void Exit()
     {
@@ -36,7 +57,7 @@ public class PlayUiManager : MonoBehaviour
         GameObject.Find("EnemySpwaner").GetComponent<EnemySpawn>().stop = false;
         GameObject.Find("Player").GetComponent<player>().stop = false;
         Time.timeScale = 1;
-        Penal.SetActive(false);
-        
+        pauseMenuUI.SetActive(false);
+
     }
 }

@@ -7,11 +7,11 @@ using UnityEngine.SceneManagement;
 public class EnemySpawn : MonoBehaviour
 {
 
-    public bool stop;
+    public bool stop = false;
 
 
     [SerializeField]
-    private float spawnRadius = 7,
+    private float spawnRadius = 9,
             time,
             time1,
             time2,
@@ -60,6 +60,7 @@ public class EnemySpawn : MonoBehaviour
     public void Update()
     {
 
+
         GameObject.Find("WaveTime").GetComponent<Text>().text = "Time : " + (waveNext - (int)curTime);
         if (curTime >= waveNext)
         {
@@ -93,12 +94,8 @@ public class EnemySpawn : MonoBehaviour
             {
                 case 0:
                     wave1.SetActive(true);
-                    if (stop == false)
-                    {
-                        StartCoroutine(SpawnAnEnemy());
+                    StartCoroutine(SpawnAnEnemy());
 
-                    }
-                    
                     iscase1 = true;
                     break;
 
@@ -107,7 +104,7 @@ public class EnemySpawn : MonoBehaviour
                     if (stop == false)
                     {
 
-                    StartCoroutine(SpawnAnEnemy());
+                        StartCoroutine(SpawnAnEnemy());
                     }
                     iscase1 = true;
                     break;
@@ -119,7 +116,7 @@ public class EnemySpawn : MonoBehaviour
                     if (stop == false)
                     {
 
-                    StartCoroutine(SpawnAnEnemy1());
+                        StartCoroutine(SpawnAnEnemy1());
                     }
                     iscase1 = true;
                     break;
@@ -129,7 +126,7 @@ public class EnemySpawn : MonoBehaviour
                     if (stop == false)
                     {
 
-                    StartCoroutine(SpawnAnEnemy1());
+                        StartCoroutine(SpawnAnEnemy1());
                     }
                     iscase1 = true;
                     break;
@@ -139,7 +136,7 @@ public class EnemySpawn : MonoBehaviour
                     if (stop == false)
                     {
 
-                    StartCoroutine(SpawnAnEnemy1());
+                        StartCoroutine(SpawnAnEnemy1());
                     }
                     iscase1 = true;
                     break;
@@ -149,7 +146,7 @@ public class EnemySpawn : MonoBehaviour
                     if (stop == false)
                     {
 
-                    StartCoroutine(SpawnAnEnemy2());
+                        StartCoroutine(SpawnAnEnemy2());
                     }
                     iscase1 = true;
                     break;
@@ -159,7 +156,7 @@ public class EnemySpawn : MonoBehaviour
                     if (stop == false)
                     {
 
-                    StartCoroutine(SpawnAnEnemy2());
+                        StartCoroutine(SpawnAnEnemy2());
                     }
                     iscase1 = true;
                     break;
@@ -169,7 +166,7 @@ public class EnemySpawn : MonoBehaviour
                     if (stop == false)
                     {
 
-                    StartCoroutine(SpawnAnEnemy2());
+                        StartCoroutine(SpawnAnEnemy2());
                     }
                     iscase1 = true;
                     break;
@@ -179,7 +176,7 @@ public class EnemySpawn : MonoBehaviour
                     if (stop == false)
                     {
 
-                    StartCoroutine(SpawnAnEnemy3());
+                        StartCoroutine(SpawnAnEnemy3());
                     }
                     iscase1 = true;
                     break;
@@ -189,7 +186,7 @@ public class EnemySpawn : MonoBehaviour
                     if (stop == false)
                     {
 
-                    StartCoroutine(SpawnAnEnemy3());
+                        StartCoroutine(SpawnAnEnemy3());
                     }
                     iscase1 = true;
                     break;
@@ -202,18 +199,25 @@ public class EnemySpawn : MonoBehaviour
     }
     IEnumerator SpawnAnEnemy()
     {
+
         yield return new WaitForSeconds(3.3f);
         while (true)
         {
             wave1.SetActive(false);
             wave2.SetActive(false);
-            Vector2 spawnPos = GameObject.Find("Player").transform.position;
+            Vector2 spawnPos;
+            if (GameObject.Find("Player") != null) { spawnPos = GameObject.Find("Player").transform.position;}
+            else { spawnPos = new Vector3(0, 0, 0); }
             spawnPos += Random.insideUnitCircle.normalized * spawnRadius;
+            if (stop == false)
+                Instantiate(enemies[Random.Range(0, enemies.Length)], spawnPos, Quaternion.identity);
 
-            Instantiate(enemies[Random.Range(0, enemies.Length)], spawnPos, Quaternion.identity);
+
 
             yield return new WaitForSecondsRealtime(time);
         }
+
+
     }
 
     IEnumerator SpawnAnEnemy1()

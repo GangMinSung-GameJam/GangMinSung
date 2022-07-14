@@ -10,8 +10,12 @@ public class Enemy : MonoBehaviour
     Vector3 dir;
     void Start()
     {
-        dir = GameObject.Find("Player").GetComponent<Transform>().up;
-        transform.rotation = GameObject.Find("Player").GetComponent<Transform>().rotation;
+        if (GameObject.Find("Player") != null)
+        {
+            dir = GameObject.Find("Player").GetComponent<Transform>().up; transform.rotation = GameObject.Find("Player").GetComponent<Transform>().rotation;
+        }
+        else return;
+
     }
     // ½ºÇÇµå
     public float speed;
@@ -26,23 +30,30 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (enemyHp <= 0)
+        if (GameObject.Find("Player") != null)
         {
-            Destroy(gameObject);
-            GameObject par = Instantiate(particle, transform.position, Quaternion.identity);
-        }
+            if (enemyHp <= 0)
+            {
+                Destroy(gameObject);
+                GameObject par = Instantiate(particle, transform.position, Quaternion.identity);
+            }
 
-        Vector2 degree = GameObject.Find("Player").GetComponent<Transform>().position - transform.position;
 
-        if (degree.magnitude <= range)
-        {
-            rigid.velocity = degree.normalized * speed;
+
+
+            Vector2 degree = GameObject.Find("Player").GetComponent<Transform>().position - transform.position;
+            if (degree.magnitude <= range)
+            {
+                rigid.velocity = degree.normalized * speed;
+            }
+            else
+            {
+                rigid.velocity = Vector2.zero;
+                degree = Vector2.zero;
+            }
         }
-        else
-        {
-            rigid.velocity = Vector2.zero;
-            degree = Vector2.zero;
-        }
+        else { return; }
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
