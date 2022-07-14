@@ -5,14 +5,16 @@ using UnityEngine;
 public class dady : MonoBehaviour
 {
     public int selectedBullet;
+    public bool iscold;
+    /* private void Start()
+     {
+         owo();
+     }*/
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (selectedBullet >= 1)
-                selectedBullet = 0;
-            else
-                selectedBullet++;
+            owo();
         }
 
         int i = 0;
@@ -23,6 +25,15 @@ public class dady : MonoBehaviour
             i++;
         }
 
+
+    }
+    public void owo()
+    {
+
+        if (selectedBullet >= 1)
+            selectedBullet = 0;
+        else
+            selectedBullet++;
 
     }
 }

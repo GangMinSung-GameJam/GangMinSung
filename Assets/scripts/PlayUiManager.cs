@@ -8,9 +8,11 @@ public class PlayUiManager : MonoBehaviour
 {
     public GameObject pauseMenuUI;
     public bool GameIsPause;
-    [SerializeField] GameObject player;
+    dady dady;
+    
     public void Start()
     {
+        dady = GameObject.Find("dady").GetComponent<dady>(); 
     }
     void Update()
     {
@@ -35,11 +37,11 @@ public class PlayUiManager : MonoBehaviour
     }
     void Pausegame()
     {
+        pauseMenuUI.SetActive(true);
         GameObject.Find("EnemySpwaner").GetComponent<EnemySpawn>().stop = true;
 
         //GameObject.Find("dady").GetComponent<dady>().selectedBullet++;
         //player.SetActive(false);
-        pauseMenuUI.SetActive(true);
         Time.timeScale = 0;
         GameIsPause = true;
 
@@ -54,10 +56,10 @@ public class PlayUiManager : MonoBehaviour
     }
     public void Countinue()
     {
-        GameObject.Find("EnemySpwaner").GetComponent<EnemySpawn>().stop = false;
-        GameObject.Find("Player").GetComponent<player>().stop = false;
-        Time.timeScale = 1;
         pauseMenuUI.SetActive(false);
-
+        GameObject.Find("EnemySpwaner").GetComponent<EnemySpawn>().stop = false;
+        Time.timeScale = 1;
+        dady.selectedBullet++;
+        dady.owo();
     }
 }

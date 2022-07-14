@@ -11,23 +11,8 @@ public class Pause : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (GameIsPause) { Resume(); }
-            else { Pausegame(); }
-        }
-    }
-    void Resume()
-    {
-        pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;
-        GameIsPause = false;
-    }
-    void Pausegame()
-    {
-        //GameObject.Find("Player").SetActive(false);
-        pauseMenuUI.SetActive(true);
-        Time.timeScale = 0;
-        GameIsPause = true;
+        if (GameObject.Find("Esc") == null) GameObject.Find("dady").GetComponent<dady>().selectedBullet = 0;
+        else GameObject.Find("dady").GetComponent<dady>().selectedBullet = 1;
     }
 }
+
