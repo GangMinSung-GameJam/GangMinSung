@@ -8,6 +8,7 @@ public class SoundSlider : MonoBehaviour
     [SerializeField] Slider slider;
     void Start()
     {
+        slider.value = 0.5f;
         if (PlayerPrefs.HasKey("volume"))
         {
             PlayerPrefs.SetFloat("volume", 1);

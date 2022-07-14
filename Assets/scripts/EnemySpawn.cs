@@ -232,10 +232,12 @@ public class EnemySpawn : MonoBehaviour
             wave3.SetActive(false);
             wave4.SetActive(false);
             wave5.SetActive(false);
-            Vector2 spawnPos1 = GameObject.Find("Player").transform.position;
+            Vector2 spawnPos1;
+            if (GameObject.Find("Player") != null) { spawnPos1 = GameObject.Find("Player").transform.position; }
+            else { spawnPos1 = new Vector3(0, 0, 0); }
             spawnPos1 += Random.insideUnitCircle.normalized * spawnRadius;
-
-            Instantiate(enemies1[Random.Range(0, enemies1.Length)], spawnPos1, Quaternion.identity);
+            if (stop == false)
+                Instantiate(enemies1[Random.Range(0, enemies1.Length)], spawnPos1, Quaternion.identity);
 
             yield return new WaitForSecondsRealtime(time1);
 
@@ -253,10 +255,12 @@ public class EnemySpawn : MonoBehaviour
             wave6.SetActive(false);
             wave7.SetActive(false);
             wave8.SetActive(false);
-            Vector2 spawnPos2 = GameObject.Find("Player").transform.position;
+            Vector2 spawnPos2;
+            if (GameObject.Find("Player") != null) { spawnPos2 = GameObject.Find("Player").transform.position; }
+            else { spawnPos2 = new Vector3(0, 0, 0); }
             spawnPos2 += Random.insideUnitCircle.normalized * spawnRadius;
-
-            Instantiate(enemies2[Random.Range(0, enemies2.Length)], spawnPos2, Quaternion.identity);
+            if (stop == false)
+                Instantiate(enemies2[Random.Range(0, enemies2.Length)], spawnPos2, Quaternion.identity);
 
             yield return new WaitForSecondsRealtime(time2);
 
@@ -272,10 +276,12 @@ public class EnemySpawn : MonoBehaviour
         {
             wave9.SetActive(false);
             wave10.SetActive(false);
-            Vector2 spawnPos3 = GameObject.Find("Player").transform.position;
+            Vector2 spawnPos3;
+            if (GameObject.Find("Player") != null) { spawnPos3 = GameObject.Find("Player").transform.position; }
+            else { spawnPos3 = new Vector3(0, 0, 0); }
             spawnPos3 += Random.insideUnitCircle.normalized * spawnRadius;
-
-            Instantiate(enemies3[Random.Range(0, enemies3.Length)], spawnPos3, Quaternion.identity);
+            if (stop == false)
+                Instantiate(enemies3[Random.Range(0, enemies3.Length)], spawnPos3, Quaternion.identity);
 
             yield return new WaitForSecondsRealtime(time3);
 
