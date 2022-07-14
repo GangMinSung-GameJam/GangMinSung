@@ -3317,7 +3317,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -14, y: -256}
+  m_AnchoredPosition: {x: -6, y: -256}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &429341706
@@ -3341,7 +3341,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 680e4560f2c72c04eb568b96c09eda48, type: 3}
     m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
@@ -3353,7 +3353,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "+\uACF5\uACA9\uB825"
+  m_Text: "+5\uACF5\uACA9\uB825"
 --- !u!222 &429341707
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3445,7 +3445,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1313069116}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4490,6 +4490,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1636e01d56876874bb36bcce435e9914, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedBullet: 0
+  stop: 0
+  upgrade: {fileID: 677469616}
 --- !u!1 &654323264
 GameObject:
   m_ObjectHideFlags: 0
@@ -4596,7 +4599,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1313069116}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4811,8 +4814,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1d40ebfbcaa8fe4a9abdf881c93783f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadCoolTime: 0.1
-  PlusDamage: 1
+  loadCoolTime: 0.2
+  PlusDamage: 5
   PlusHp: 10
   panel: {fileID: 626498976}
   player: {fileID: 1471570740}
@@ -6805,8 +6808,8 @@ RectTransform:
   - {fileID: 1149774726}
   - {fileID: 1312154444}
   - {fileID: 1001288795}
-  - {fileID: 486691072}
   - {fileID: 661254572}
+  - {fileID: 486691072}
   - {fileID: 248785947}
   - {fileID: 1167652297}
   - {fileID: 2114568046}
@@ -7414,7 +7417,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 680e4560f2c72c04eb568b96c09eda48, type: 3}
     m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
@@ -7426,7 +7429,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "+\uACF5\uACA9\uB825"
+  m_Text: "+50\uCCB4\uB825"
 --- !u!222 &1472571230
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8574,7 +8577,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 680e4560f2c72c04eb568b96c09eda48, type: 3}
     m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
@@ -8586,7 +8589,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "+\uACF5\uACA9\uB825"
+  m_Text: "-0.2\uCD08"
 --- !u!222 &1935752439
 CanvasRenderer:
   m_ObjectHideFlags: 0
