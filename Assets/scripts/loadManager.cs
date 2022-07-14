@@ -18,6 +18,7 @@ public class loadManager : MonoBehaviour
     [SerializeField] Shotgun Shotgun;
 
 
+
     float a;
     float b;
     float c;
@@ -32,6 +33,15 @@ public class loadManager : MonoBehaviour
         a = 0;
         b = 0;
         c = 0;
+        load();
+    }
+    public void load()
+    {
+        MachineGunslider.maxValue = machine.reloadTime;
+
+        Laserslider.maxValue = Laser.reloadTime;
+
+        Shotgunslider.maxValue = Shotgun.reloadTime;
     }
 
     void Update()

@@ -15,7 +15,7 @@ public class Upgrade : MonoBehaviour
     [SerializeField] Laser laser;
     [SerializeField] Shotgun shotgun;
     [SerializeField] Muchinebullet muchinegunDamage;
-
+    [SerializeField] loadManager loadManager;
     private void Start()
     {
         muchinegunDamage.damage = muchinegunDamage.Maxdamage;
@@ -24,7 +24,7 @@ public class Upgrade : MonoBehaviour
     public void loadTime()
     {
         GameObject.Find("EnemySpwaner").GetComponent<EnemySpawn>().stop = false;
-        machinegun.reloadTime -= loadCoolTime;
+        machinegun.reloadTime -= loadCoolTime;  
         laser.reloadTime -= loadCoolTime;
         shotgun.reloadTime -= loadCoolTime;
         
@@ -32,7 +32,7 @@ public class Upgrade : MonoBehaviour
         panel.SetActive(false);
         panel2.SetActive(false);
         Time.timeScale = 1;
-
+        loadManager.load();
     }
     public void PlayerHpUp()
     {

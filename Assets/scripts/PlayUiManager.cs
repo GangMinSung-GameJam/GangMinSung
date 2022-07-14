@@ -53,6 +53,7 @@ public class PlayUiManager : MonoBehaviour
     public void ScenceChange()
     {
         SceneManager.LoadScene("Start");
+        Time.timeScale = 1;
     }
     public void Countinue()
     {
