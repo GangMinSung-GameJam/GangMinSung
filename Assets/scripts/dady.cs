@@ -26,11 +26,9 @@ public class dady : MonoBehaviour
     }
     public void owo()
     {
-
         if (selectedBullet >= 1)
             selectedBullet = 0;
         else
             selectedBullet++;
-
     }
 }
