@@ -2873,7 +2873,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "+10\uACF5\uACA9\uB825"
+  m_Text: "+ 5\uACF5\uACA9\uB825"
 --- !u!222 &107742308
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3832,7 +3832,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "+10\uACF5\uACA9\uB825"
+  m_Text: "+ 5\uACF5\uACA9\uB825"
 --- !u!222 &429341707
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4146,8 +4146,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 2533344251679522978, guid: 2cbb862497f8ffe4eb69808589492e94,
+    type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4838,7 +4839,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &618013656
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5147,8 +5148,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 2144475514580603324, guid: 2cbb862497f8ffe4eb69808589492e94,
+    type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5412,7 +5414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadCoolTime: 0.3
-  PlusDamage: 10
+  PlusDamage: 5
   PlusHp: 50
   panel: {fileID: 626498976}
   panel2: {fileID: 618013655}
@@ -6795,6 +6797,7 @@ MonoBehaviour:
   particlePos: {fileID: 1001831781}
   particle: {fileID: 9114363480821594989, guid: 536f93fbdbf699d43b92ffa19622f7d4,
     type: 3}
+  currentDamage: 0
   maxbullet: 120
   curbullet: 0
   reloadTime: 3
@@ -10010,9 +10013,9 @@ MonoBehaviour:
   - {fileID: 696197103875572685, guid: 2c34b7a041295af4fa6bb27a86dc7cd2, type: 3}
   - {fileID: 696197103875572685, guid: 7dddd62b471456e4e85c3283cfa342da, type: 3}
   - {fileID: 696197103875572685, guid: ec2fc4511278ba8459eb17a76a6494ef, type: 3}
-  waveNext: 5
-  endWaveTime: 5
-  Wave12Time: 5
+  waveNext: 30
+  endWaveTime: 60
+  Wave12Time: 20
 --- !u!4 &1983682083
 Transform:
   m_ObjectHideFlags: 0
