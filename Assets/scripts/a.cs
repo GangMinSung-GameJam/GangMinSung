@@ -9,7 +9,9 @@ public class a : MonoBehaviour
     [SerializeField] Upgrade upgrade;
     void Update()
     {
-        GameObject.Find("Player").SetActive(false);
+        
+        if(GameObject.Find("Player") == null) { return; }
+        else { GameObject.Find("Player").SetActive(false); }
         Time.timeScale = 0;
         GameObject.Find("EnemySpwaner").GetComponent<EnemySpawn>().stop = true;
         SelectBullet();
