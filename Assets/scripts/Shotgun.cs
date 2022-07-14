@@ -8,6 +8,7 @@ public class Shotgun : MonoBehaviour
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject firepos;
 
+
     public int maxbullet;
     public int curbullet;
     public float reloadTime;
@@ -21,6 +22,7 @@ public class Shotgun : MonoBehaviour
     {
         canFire = true;
         curbullet = maxbullet;
+
     }
     void Update()
     {
@@ -36,7 +38,6 @@ public class Shotgun : MonoBehaviour
                 curfireRate = 0;
 
                 Instantiate(bullet, firepos.transform.position, Quaternion.identity);
-
             }
             if (curbullet == 0)
             {

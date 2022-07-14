@@ -6,13 +6,19 @@ public class dady : MonoBehaviour
 {
     public int selectedBullet;
     public bool iscold;
+    bool isstop;
+    AudioSource audio;
     /* private void Start()
      {
          owo();
      }*/
+    private void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
     void Update()
     {
-            owo();
+        owo();
 
         int i = 0;
         foreach (Transform weapon in transform)
@@ -22,7 +28,15 @@ public class dady : MonoBehaviour
             i++;
         }
 
-
+        if (GameObject.Find("Shotgunbulletparticle(Clone)") == null) { isstop = false; }
+        else
+        {
+            if (!isstop)
+            {
+                audio.Play();
+                isstop = true;
+            }
+        }
     }
     public void owo()
     {

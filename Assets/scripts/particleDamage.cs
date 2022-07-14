@@ -6,9 +6,16 @@ public class particleDamage : MonoBehaviour
 {
     public float damage;
 
+    AudioSource audio;
+    
+    private void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
     private void Update()
     {
         Destroy(gameObject,0.25f);
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

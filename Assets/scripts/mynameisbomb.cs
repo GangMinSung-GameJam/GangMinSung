@@ -23,7 +23,7 @@ public class mynameisbomb : MonoBehaviour
         time += Time.deltaTime;
         transform.position += dir * speed * Time.deltaTime;
 
-        if(Vector3.Distance(transform.position, targetPosition) < 1)
+        if(Vector3.Distance(transform.position, targetPosition) <= 1)
         {
             Destroy(gameObject);
             GameObject par = Instantiate(particle, transform.position, Quaternion.identity);

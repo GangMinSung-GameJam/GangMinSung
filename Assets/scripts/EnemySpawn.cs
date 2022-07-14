@@ -10,6 +10,7 @@ public class EnemySpawn : MonoBehaviour
     public bool stop = false;
     [SerializeField] GameObject panel;
     [SerializeField] GameObject panel2;
+    [SerializeField] Text txt;
 
     [SerializeField]
     private float spawnRadius = 9,
@@ -60,8 +61,10 @@ public class EnemySpawn : MonoBehaviour
     float curTime = 0;
     public void Update()
     {
+        PlayerPrefs.SetInt("wave", waveTime);
         curTime += Time.deltaTime;
 
+        txt.text = "WAVE " + (waveTime+1);
         GameObject.Find("WaveTime").GetComponent<Text>().text = "Next Wave: " + (waveNext - (int)curTime);
         if (curTime >= waveNext)
         {
