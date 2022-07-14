@@ -8,7 +8,7 @@ public class EnemySpawn : MonoBehaviour
 {
 
     public bool stop = false;
-
+    [SerializeField] GameObject panel;
 
     [SerializeField]
     private float spawnRadius = 9,
@@ -93,6 +93,7 @@ public class EnemySpawn : MonoBehaviour
             switch (waveTime)
             {
                 case 0:
+
                     wave1.SetActive(true);
                     StartCoroutine(SpawnAnEnemy());
 
@@ -201,6 +202,9 @@ public class EnemySpawn : MonoBehaviour
     {
 
         yield return new WaitForSeconds(3.3f);
+
+        panel.SetActive(true);
+
         while (true)
         {
             wave1.SetActive(false);
@@ -212,8 +216,6 @@ public class EnemySpawn : MonoBehaviour
             if (stop == false)
                 Instantiate(enemies[Random.Range(0, enemies.Length)], spawnPos, Quaternion.identity);
 
-
-
             yield return new WaitForSecondsRealtime(time);
         }
 
@@ -223,6 +225,8 @@ public class EnemySpawn : MonoBehaviour
     IEnumerator SpawnAnEnemy1()
     {
         yield return new WaitForSeconds(3.3f);
+        panel.SetActive(true);
+
         while (true)
         {
             wave3.SetActive(false);
@@ -242,6 +246,8 @@ public class EnemySpawn : MonoBehaviour
     {
 
         yield return new WaitForSeconds(3.3f);
+        panel.SetActive(true);
+
         while (true)
         {
             wave6.SetActive(false);
@@ -260,6 +266,8 @@ public class EnemySpawn : MonoBehaviour
     {
 
         yield return new WaitForSeconds(3.3f);
+        panel.SetActive(true);
+
         while (true)
         {
             wave9.SetActive(false);

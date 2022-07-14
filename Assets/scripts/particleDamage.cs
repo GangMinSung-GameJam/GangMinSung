@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class particleDamage : MonoBehaviour
 {
-    public float damage= 20;
+    public float damage;
 
     private void Update()
     {

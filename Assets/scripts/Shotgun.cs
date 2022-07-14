@@ -10,7 +10,7 @@ public class Shotgun : MonoBehaviour
 
     public int maxbullet;
     public int curbullet;
-    public int reloadTime;
+    public float reloadTime;
     public float fireRate;
 
     float curfireRate;

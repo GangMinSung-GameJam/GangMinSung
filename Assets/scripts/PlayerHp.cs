@@ -5,15 +5,17 @@ using UnityEngine.UI;
 
 public class PlayerHp : MonoBehaviour
 {
-    public Slider hpbar;
+    [SerializeField] Slider hpbar;
     player player;
     private void Start()
     {
-        player = GetComponent<player>(); 
+        player = GetComponent<player>();
+        hpbar.maxValue = player.maxHp;
+        hpbar.value = player.currenthp;
     }
 
     void Update()
     {
-        hpbar.value = player.currenthp / player.maxHp;
+        hpbar.value = player.currenthp;
     }
 }

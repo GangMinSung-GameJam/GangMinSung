@@ -10,7 +10,7 @@ public class Laser : MonoBehaviour
 
     public int maxbullet;
     public int curbullet;
-    public int reloadTime;
+    public float reloadTime;
     public bool canFire;
     bool firerate;
     public float fireRate;

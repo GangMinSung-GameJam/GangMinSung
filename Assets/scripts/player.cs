@@ -19,6 +19,10 @@ public class player : MonoBehaviour
     }
     void Update()
     {
+        if(currenthp >= maxHp)
+        {
+            currenthp = maxHp;
+        }
         fire();
         SelectBullet();
         swap();
@@ -26,6 +30,8 @@ public class player : MonoBehaviour
         {
             SceneManager.LoadScene("GameOver");
         }
+
+
     }
 
     public void SelectBullet()

@@ -14394,7 +14394,7 @@ GameObject:
   - component: {fileID: 4231123360626403530}
   - component: {fileID: 3011375486961499146}
   m_Layer: 0
-  m_Name: CFX_Explosion_B_Smoke+Text
+  m_Name: Shotgunbulletparticle
   m_TagString: FxTemporaire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

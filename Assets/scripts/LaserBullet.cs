@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class LaserBullet : MonoBehaviour
 {
-    public float damage = 20;
+    public float Maxdamage = 20;
+    public float damage;
     Vector3 dir;
     public float destroytime;
     void Start()
     {
+        damage = Maxdamage;
         dir = GameObject.Find("Player").GetComponent<Transform>().up;
         transform.rotation = GameObject.Find("Player").GetComponent<Transform>().rotation;
     }

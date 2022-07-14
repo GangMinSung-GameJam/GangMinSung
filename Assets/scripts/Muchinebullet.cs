@@ -5,10 +5,12 @@ using UnityEngine;
 public class Muchinebullet : MonoBehaviour
 {
 
-    public float damage = 5;
+    public float Maxdamage = 5;
+    public float damage;
     // Start is called before the first frame update
     void Start()
     {
+        damage = Maxdamage;
     }
 
     // Update is called once per frame
