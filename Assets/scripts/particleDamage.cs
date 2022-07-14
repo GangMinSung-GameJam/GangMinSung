@@ -8,7 +8,7 @@ public class particleDamage : MonoBehaviour
 
     private void Update()
     {
-        Destroy(gameObject,1);
+        Destroy(gameObject,0.25f);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

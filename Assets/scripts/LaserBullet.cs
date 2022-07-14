@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class LaserBullet : MonoBehaviour
 {
-    public float Maxdamage = 20;
+    SpriteRenderer sr;
+
+    public float Maxdamage = 20;    
     public float damage;
+    public float time;
     Vector3 dir;
     public float destroytime;
     void Start()
     {
+        sr = GetComponent<SpriteRenderer>();
+        StartCoroutine("fadeout");
         damage = Maxdamage;
         dir = GameObject.Find("Player").GetComponent<Transform>().up;
         transform.rotation = GameObject.Find("Player").GetComponent<Transform>().rotation;
     }
     private void Update()
     {
-        Destroy(gameObject,destroytime);
+        Destroy(gameObject, destroytime);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -24,9 +29,16 @@ public class LaserBullet : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
-        if (collision.CompareTag("metal"))
+    }
+    IEnumerator fadeout()
+    {
+        for (int i = 10; i >= 0; i--)
         {
-
+            float f = i / 10.0f;
+            Color c = sr.material.color;
+            c.a = f;
+            sr.material.color = c;
+            yield return new WaitForSeconds(0.1f);
         }
     }
 }
