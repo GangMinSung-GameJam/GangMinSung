@@ -10,6 +10,7 @@ public class MachineGun : MonoBehaviour
     [SerializeField] GameObject firePos;
     [SerializeField] GameObject particlePos;
     [SerializeField] GameObject particle;
+    AudioSource shootSound;
 
     public int maxbullet;
     public int curbullet;
@@ -25,6 +26,8 @@ public class MachineGun : MonoBehaviour
     {
         canFire = true;
         curbullet = maxbullet;
+
+        shootSound = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -52,6 +55,7 @@ public class MachineGun : MonoBehaviour
                 Instantiate(particle, particlePos.transform.position, Quaternion.identity);
                 bullet.transform.position = transform.position;
 
+                shootSound.Play();
             }
         }
         if (curbullet == 0)

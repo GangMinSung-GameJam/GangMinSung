@@ -59,7 +59,7 @@ public class EnemySpawn : MonoBehaviour
     float curTime = 0;
     public void Update()
     {
-
+        curTime += Time.deltaTime;
 
         GameObject.Find("WaveTime").GetComponent<Text>().text = "Time : " + (waveNext - (int)curTime);
         if (curTime >= waveNext)
@@ -86,7 +86,7 @@ public class EnemySpawn : MonoBehaviour
             waveNext = endWaveTime;
         }
 
-        curTime += Time.deltaTime;
+        
 
         if (!iscase1)
         {
