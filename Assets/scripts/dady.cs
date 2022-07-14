@@ -12,10 +12,7 @@ public class dady : MonoBehaviour
      }*/
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
             owo();
-        }
 
         int i = 0;
         foreach (Transform weapon in transform)

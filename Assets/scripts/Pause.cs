@@ -11,8 +11,8 @@ public class Pause : MonoBehaviour
 
     void Update()
     {
-        if (GameObject.Find("Esc") == null) GameObject.Find("dady").GetComponent<dady>().selectedBullet = 0;
-        else GameObject.Find("dady").GetComponent<dady>().selectedBullet = 1;
+        if (GameObject.Find("Esc") == null) GameObject.Find("dady").GetComponent<dady>().selectedBullet = 1;
+        else GameObject.Find("dady").GetComponent<dady>().selectedBullet = 0;
     }
 }
 

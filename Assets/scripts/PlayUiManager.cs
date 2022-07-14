@@ -59,7 +59,5 @@ public class PlayUiManager : MonoBehaviour
         pauseMenuUI.SetActive(false);
         GameObject.Find("EnemySpwaner").GetComponent<EnemySpawn>().stop = false;
         Time.timeScale = 1;
-        dady.selectedBullet++;
-        dady.owo();
     }
 }
